@@ -11,6 +11,14 @@ counter = 0
 # Init with random numbers
 a, b, c, d, e, f, g, h, p = random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9)
 
+def getInt(arr):
+    ran = 99
+    while (ran > len(arr) - 1):
+        ran = random.randint(0, len(arr))
+    sliceObj = slice(ran, ran+1)
+    num = arr[sliceObj][0]
+    arr.remove(num)
+    return num
 
 #Validates all the numbers are never repeats and meet the equation requirements
 def check(a,b,c,d,e,f,g,h,p):
@@ -42,8 +50,8 @@ def check(a,b,c,d,e,f,g,h,p):
         return False
 
 while check(a,b,c,d,e,f,g,h,p) == True:
-
-    a, b, c, d, e, f, g, h, p = random.randint(1, 9),random.randint(0, 9),random.randint(1, 9),random.randint(0, 9),random.randint(1, 9),random.randint(0, 9),random.randint(1, 9),random.randint(0, 9),random.randint(0, 9)
+    arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    a, b, c, d, e, f, g, h, p = getInt(arr), getInt(arr), getInt(arr), getInt(arr), getInt(arr), getInt(arr), getInt(arr), getInt(arr), getInt(arr)
     counter += 1
 
 stop = timeit.default_timer()
