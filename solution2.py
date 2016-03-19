@@ -43,11 +43,17 @@ def check(a,b,c,d,e,f,g,h,p):
 
 while check(a,b,c,d,e,f,g,h,p) == True:
 
-    a, b, c, d, e, f, g, h, p = random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9),random.randint(0, 9)
+    a, b, c, d, e, f, g, h, p = random.randint(1, 9),random.randint(0, 9),random.randint(1, 9),random.randint(0, 9),random.randint(1, 9),random.randint(0, 9),random.randint(1, 9),random.randint(0, 9),random.randint(0, 9)
     counter += 1
 
 stop = timeit.default_timer()
 
 print "Final Result", a, b, c, d, e, f, g, h, p, "Random:", counter, "Times"
+print " AB : ", a, b
+print "-CD : ", c, d
+print "    = ", e, f
+print " EF   ", e, f
+print "+GH : ", g, h
+print "    = ", p, p, p
 print "Validation - AB-CD:", (a*10 + b) - (c*10 + d), "=", (e*10 + f), "EF+GH:", (e*10+f) + (g*10+h), "=", (p*100+p*10+p)
 print "Finished in :", stop - start
